@@ -5,13 +5,12 @@ import ru.skypro.coursework.Employee;
 public abstract class Main {
 
     public static void getSalary(Employee[] employee) {
-        float allSalary = 0f;
+        int allSalary = 0;
         for (int i = 0; i < employee.length; i++) {
             allSalary += employee[i].getSalary();
-            System.out.println("Сумма затрат на зарплаты за месяц: " + allSalary);
         }
+        System.out.println("Сумма затрат на зарплаты за месяц: " + allSalary);
     }
-
 
     public static void minMaxSalary(Employee[] employee) {
         int minSalary = employee[0].getSalary();
@@ -28,20 +27,20 @@ public abstract class Main {
     }
 
     public static void averageMoney(Employee[] employee) {
-        float allSalary = 0f;
+        int allSalary = 0;
         for (int i = 0; i < employee.length; i++) {
             allSalary += employee[i].getSalary();
-            double averageSalary = allSalary / employee.length;
-            System.out.println("Среднее значение зарплат: " + averageSalary);
         }
-    }
+            System.out.println("Среднее значение зарплат: " + allSalary / employee.length);
+        }
 
     public static void allNames(Employee[] employee) {
         for (int i = 0; i < employee.length; i++) {
             if (i == employee.length - 1) {
-                System.out.println("ФИО сотрудников: " + employee[i].getName());
+                System.out.println(employee[i].getName());
                 break;
-            } System.out.print(employee[i].getName() + ", ");
+            }
+            System.out.print(employee[i].getName() + ", ");
         }
     }
 
@@ -85,12 +84,15 @@ public abstract class Main {
         employee[8] = new Employee("Трунов Дмитрий Дмитриевич", 3, 77_000);
         employee[9] = new Employee("Мурзина Алина Вячеславовна", 2, 107_000);
 
+        getSalary(employee);
+        minMaxSalary(employee);
+        averageMoney(employee);
+        allNames(employee);
 
 
 
-            }
-        }
-
+    }
+}
 
 
 
